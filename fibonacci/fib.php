@@ -43,7 +43,7 @@ if ($argc <= 1) {
     exit(1);
 }
 
-// Get the number of arguments to run
+// Get the number of iterations to run
 $n = (int) $argv[1];
 
 // Did they specify a start value
