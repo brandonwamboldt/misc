@@ -14,9 +14,9 @@
 
 int main(int argc, char *argv[])
 {
-  int i;
-  int sum = 0;
-  int max = 1000; // 1000 is the problem's given maximum value
+  unsigned int i;
+  unsigned int sum = 0;
+  unsigned int max = 1000; // 1000 is the problem's given maximum value
 
   // Get the number of iterations to run
   if (argc > 1) {
