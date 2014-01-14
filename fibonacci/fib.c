@@ -56,13 +56,9 @@ int main(int argc, char *argv[])
   sequence = calculateFibonacciSequence(n);
 
   if (sequence) {
-    printf("%llu", sequence[0]);
-
-    for (i = 1; i <= n; i++) {
-      printf(",%llu", sequence[i]);
+    for (i = 0; i <= n; i++) {
+      printf("%d: %llu\n", i, sequence[i]);
     }
-
-    putchar('\n');
 
     free(sequence);
   } else {
