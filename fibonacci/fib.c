@@ -8,14 +8,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int *calculateFibonacciSequence(int n)
+long long *calculateFibonacciSequence(int n)
 {
   if (n <= 0) {
     return 0;
   }
 
   int i = 0;
-  int *numbers = malloc(sizeof(int) * n);
+  unsigned long long *numbers = malloc(sizeof(long long) * (n + 1));
+
+  if (!numbers) {
+    return 0;
+  }
+
   numbers[0] = 0;
   numbers[1] = 1;
 
@@ -29,32 +34,41 @@ int *calculateFibonacciSequence(int n)
 int main(int argc, char *argv[])
 {
   int i, n;
-  int *sequence;
+  unsigned long long *sequence;
 
   if (argc <= 1) {
-    puts("Please pass the number of iterations to run.");
+    puts("Please pass the number of iterations to run");
     return 1;
   }
 
-  // Get the number of iterations to run
   n = atoi(argv[1]);
+
+  if (n <= 0) {
+    puts("Please provide a valid number of iterations to run");
+    return 1;
+  }
+
+  if (n > 93) {
+    puts("This program is only capable of producing 93 fibonacci numbers");
+    return 1;
+  }
 
   sequence = calculateFibonacciSequence(n);
 
   if (sequence) {
-    printf("%d", sequence[0]);
+    printf("%llu", sequence[0]);
 
     for (i = 1; i <= n; i++) {
-      printf(",%d", sequence[i]);
+      printf(",%llu", sequence[i]);
     }
 
     putchar('\n');
+
+    free(sequence);
   } else {
     puts("Error processing fibonacci sequence");
     return 1;
   }
-
-  free(sequence);
 
   return 0;
 }
