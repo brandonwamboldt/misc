@@ -23,12 +23,10 @@ int main(int argc, char *argv[])
   unsigned int sum = 0;
   unsigned int max = 4000000; // 4,000,000 is the problem's given maximum value
 
-  // Get the maximum value to consider
   if (argc > 1) {
     max = atoi(argv[1]);
   }
 
-  // Calculate the fibonacci sequence up to our max value
   while (current < max) {
     current = n1 + n2;
     n2 = n1;
