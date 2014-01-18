@@ -8,17 +8,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-long long *calculateFibonacciSequence(int n)
+long long unsigned *calculateFibonacciSequence(int n)
 {
   if (n <= 0) {
-    return 0;
+    return NULL;
   }
 
   int i = 0;
   unsigned long long *numbers = malloc(sizeof(long long) * (n + 1));
 
   if (!numbers) {
-    return 0;
+    return NULL;
   }
 
   numbers[0] = 0;
