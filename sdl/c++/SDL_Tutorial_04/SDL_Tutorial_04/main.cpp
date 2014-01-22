@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
 {
 	if (!init()) {
 		printf("Failed to initialize!\n");
-	} else {
+    } else {
 		if (!loadMedia()) {
 			printf("Failed to load media!\n");
 		} else {
@@ -133,23 +133,23 @@ int main(int argc, char *argv[])
 					if (e.type == SDL_QUIT) {
 						quit = true;
 					} else if (e.type == SDL_KEYDOWN) {
-                        switch (e.key.keysym.sym) {
-                            case SDLK_UP:
+						switch (e.key.keysym.sym) {
+							case SDLK_UP:
 								gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_UP];
 								break;
-                            case SDLK_DOWN:
+							case SDLK_DOWN:
 								gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_DOWN];
 								break;
-                            case SDLK_LEFT:
+							case SDLK_LEFT:
 								gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT];
 								break;
-                            case SDLK_RIGHT:
+							case SDLK_RIGHT:
 								gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT];
 								break;
-                            default:
+							default:
 								gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT];
 								break;
-                        }
+						}
 					}
 				}
 
