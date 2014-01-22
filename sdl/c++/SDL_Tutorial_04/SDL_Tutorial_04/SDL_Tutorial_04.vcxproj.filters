@@ -19,4 +19,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="press.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="right.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="down.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="left.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

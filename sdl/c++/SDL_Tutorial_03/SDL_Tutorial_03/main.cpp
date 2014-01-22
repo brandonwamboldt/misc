@@ -11,8 +11,8 @@
 #include <SDL.h>
 #include <stdio.h>
 
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 640;
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
 
 SDL_Window *gWindow = nullptr;
 SDL_Surface *gScreenSurface = nullptr;
@@ -29,7 +29,7 @@ bool init()
 	} else {
 		gWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 
-		if (gWindow == nullptr) {
+		if (gWindow == NULL) {
 			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 			success = false;
 		} else {
@@ -46,7 +46,7 @@ bool loadMedia()
 
 	gHelloWorld = SDL_LoadBMP("x.bmp");
 
-	if (gHelloWorld == nullptr) {
+	if (gHelloWorld == NULL) {
 		printf("Unable to load image %s! SDL Error: %s\n", "x.bmp", SDL_GetError());
 		success = false;
 	}
@@ -77,7 +77,9 @@ int main(int argc, char *argv[])
 
 			while (!quit) {
 				while (SDL_PollEvent(&e) != 0) {
-					if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_SPACE) {
+					if (e.type == SDL_QUIT) {
+						quit = true;
+					} else if (e.type == SDL_KEYDOWN && (e.key.keysym.sym == SDLK_SPACE || e.key.keysym.sym == SDLK_ESCAPE)) {
 						quit = true;
 					}
 				}

@@ -26,7 +26,7 @@ bool init()
 	} else {
 		gWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 
-		if (gWindow == nullptr) {
+		if (gWindow == NULL) {
 			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 			return false;
 		} else {
@@ -41,7 +41,7 @@ bool loadMedia()
 {
 	gHelloWorld = SDL_LoadBMP("hello_world.bmp");
 
-	if (gHelloWorld == nullptr) {
+	if (gHelloWorld == NULL) {
 		printf("Unable to load image %s! SDL Error: %s\n", "hello_world.bmp", SDL_GetError());
 		return false;
 	}
